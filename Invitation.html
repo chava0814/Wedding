@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .module {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 40px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 2.8em;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        h2 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+            font-weight: 400;
+        }
+        .button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+        }
+        .button:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+        }
+        .map {
+            margin-top: 20px;
+        }
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+        .gallery {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* Efecto de sombra en los módulos */
+        .module:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        /* Estilos para el módulo de intro */
+        .intro {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            color: #fff;
+            padding: 100px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+        }
+        .intro video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .intro h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .intro p {
+            font-size: 1.5em;
+            color: #fff;
+        }
+        /* Estilos para el módulo de padres y padrinos */
+        .parents {
+            text-align: center;
+        }
+        .parents h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .parents p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        /* Estilos para el botón de música */
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1em;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .music-control:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón de control de música -->
+    <button class="music-control" id="musicButton">▶️ Reproducir Música</button>
+
+    <!-- Audio para la canción de fondo -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <div class="container">
+        <!-- Módulo de intro con video -->
+        <div class="module intro">
+            <video autoplay muted loop>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <h1>Nashelly & Salvador</h1>
+            <p>¡Bienvenidos a nuestra boda!</p>
+        </div>
+
+        <!-- Módulo 1: Mensaje de amor -->
+        <div class="module">
+            <h1>¡Nos Casamos!</h1>
+            <p>
+                Después de un hermoso viaje juntos, hemos decidido unir nuestras vidas para siempre. 
+                Nuestro amor es un reflejo de la paciencia, el respeto y la complicidad que hemos construido día a día. 
+                Queremos compartir este momento tan especial contigo.
+            </p>
+        </div>
+
+        <!-- Módulo de padres y padrinos -->
+        <div class="module parents">
+            <h2>Nuestros Padres y Padrinos</h2>
+            <p><strong>Padres de la Novia:</strong> Nathanael y Laura</p>
+            <p><strong>Padres del Novio:</strong> Ramiro y Virginia</p>
+            <p><strong>Padrinos:</strong> Gabriel y Angeles</p>
+        </div>
+
+        <!-- Módulo de Lluvia de Sobres -->
+        <div class="module">
+            <h2>🎁 Lluvia de Sobres 🎁</h2>
+            <p style="font-size: 0.9em; color: #888;">
+                La lluvia de sobres es la tradición de regalar dinero en efectivo a los novios en un sobre el día del evento.
+            </p>
+            <div style="text-align: center; margin-top: 20px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="Lluvia de sobres" width="100">
+            </div>
+        </div>
+
+        <!-- Módulo de Cuentas Bancarias -->
+        <div class="module">
+            <h2>💳 Cuentas Bancarias 💳</h2>
+            <p>Si deseas hacernos un regalo y prefieres hacerlo mediante depósito, aquí están nuestras cuentas:</p>
+            <div style="background-color: #f8f8f8; padding: 20px; border-radius: 10px;">
+                <p><strong>Banco BBVA:</strong> 0123 4567 8901 2345</p>
+                <p><strong>Banco Banamex:</strong> 6789 0123 4567 8901</p>
+            </div>
+        </div>
+
+        <!-- Módulo 2: Boda civil -->
+        <div class="module">
+            <h2>Boda Civil</h2>
+            <p><strong>Fecha:</strong> Sábado, 6 de Septiembre de 2025</p>
+            <p><strong>Hora:</strong> 01:00 PM</p>
+            <p><strong>Lugar:</strong> Salón Hidalgo, Calle Hidalgo 18, Col. Independencia, Nicolás Romero, EDOMEX.</p>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1738607394686!6m8!1m7!1sx7oC8FGfUK-8vedXAu52Cg!2m2!1d19.63029299147417!2d-99.31608590930851!3f121.25159629399097!4f-15.847624680384612!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <a href="mailto:rsvp@miwedding.com?subject=Confirmación de Asistencia - Boda Civil" class="button">Confirmar Asistencia</a>
+        </div>
+
+        <!-- Módulo 3: Ceremonia grande -->
+        <div class="module">
+            <h2>Ceremonia y Celebración</h2>
+            <p><strong>Fecha:</strong> Sábado, 21 de Febrero de 2025</p>
+            <p><strong>Hora:</strong> 6:00 PM</p>
+            <p><strong>Lugar:</strong> Hacienda Santa Catarina, Carr a San Bartolomé Xicomulco 580, Santa Cecilia Tepetlapa, Xochimilco, 16880 Ciudad de México, CDMX</p>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60273.82064599187!2d-99.13255770187608!3d19.233871966152684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0437dbf21e11%3A0xe76e6e2ab267a3f4!2sSanta%20Catarina%20%E2%80%9CLa%20casa%20de%20Alcachofo%E2%80%9D!5e0!3m2!1ses-419!2smx!4v1738605973770!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="gallery">
+                <img src="images/SANTA CATARINA.png" alt="Foto 1">
+                <img src="images/SANTA CATARINA 2.png" alt="Foto 3">
+                <img src="images/SANTA CATARINA 3.png" alt="Foto 4">
+            </div>
+            <a href="mailto:rsvp@miwedding.com?subject=Confirmación de Asistencia - Ceremonia" class="button">Confirmar Asistencia</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para controlar la música
+        const musicButton = document.getElementById('musicButton');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        musicButton.addEventListener('click', () => {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                musicButton.textContent = '⏸️ Pausar Música';
+            } else {
+                backgroundMusic.pause();
+                musicButton.textContent = '▶️ Reproducir Música';
+            }
+        });
+    </script>
+</body>
+</html>
